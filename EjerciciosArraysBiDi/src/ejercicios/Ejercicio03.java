@@ -1,35 +1,27 @@
 package ejercicios;
 
-import java.util.Scanner;
-
 public class Ejercicio03 {
 
 	public static void main(String[] args) {
 
-		Ejercicio03 ejer = new Ejercicio03();
-
-		Scanner sc = new Scanner(System.in);
-
-		int tabla[][];
-
-		int n;
-
-		int m;
-
-		System.out.print("Numero de filas: ");
-		n = sc.nextInt();
-		System.out.println("Numero de columnas: ");
-		m = sc.nextInt();
-
-		tabla = new int[n][m];
-
+		int tabla[][] = new int [5][5];
+		
+		tablaBidi(tabla);
+		
+		for(int fila[] : tabla) {
+			for(int valor : fila) {
+				System.out.print(valor + "\t");
+			}
+			System.out.println();
+		}
+		
 	}
 
-	public void tablaBidi(int tabla[][], int n, int m) {
+	public static void tablaBidi(int tabla[][]) {
 
-		for (int i = 0; i < tabla.length; i++) {
-			for (int j = 0; j < tabla[i].length; j++) {
-				tabla[i][j] = 10 * (i + j);
+		for (int n = 0; n < tabla.length; n++) {
+			for (int m = 0; m < tabla[n].length; m++) {
+				tabla[n][m] = 10 * (n + m);
 			}
 		}
 
